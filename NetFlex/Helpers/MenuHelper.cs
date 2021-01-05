@@ -130,6 +130,7 @@
             // var processes = Process.GetProcessesByName("Chrome");
             // var path = processes.FirstOrDefault()?.MainModule?.FileName;
             // Process.Start(path, url);
+            // Code borrowed from https://stackoverflow.com/a/55572459
 
         }
 
