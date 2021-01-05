@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Linq;
 
     /// <summary>
     /// Defines the <see cref="MenuHelper" />.
@@ -119,7 +121,17 @@
         /// Display an IMDB search Url.
         /// </summary>
         /// <param name="serie">The serie<see cref="Show"/>.</param>
-        private static void DisplayUrl(Show serie) => Console.WriteLine("https://www.imdb.com/find?q=" + GetMovieTitle(serie));
+        private static void DisplayUrl(Show serie)
+        {
+            var url = "https://www.imdb.com/find?q=" + GetMovieTitle(serie).Replace(' ', '+').Replace("&", "^&");
+            Console.WriteLine(url);
+
+            // Overkill, opens a webbrowser withe the URL
+            // var processes = Process.GetProcessesByName("Chrome");
+            // var path = processes.FirstOrDefault()?.MainModule?.FileName;
+            // Process.Start(path, url);
+
+        }
 
         /// <summary>
         /// Asks for a nummeric choice and keeps asking until the needed value is given
