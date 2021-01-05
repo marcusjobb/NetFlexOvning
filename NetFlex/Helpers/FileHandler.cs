@@ -33,7 +33,7 @@
         internal static List<Movie> LoadMovies(string filename)
         {
             var data = GetData(filename);
-            if (data != "") data = Seeder.CreateMovies();
+            if (data == "") data = Seeder.CreateMovies();
             return (List<Movie>)JsonConvert.DeserializeObject<List<Movie>>(data);
         }
 
@@ -45,7 +45,7 @@
         internal static List<Serie> LoadSeries(string filename)
         {
             var data = GetData(filename);
-            if (data != "") data = Seeder.CreateSeries();
+            if (data == "") data = Seeder.CreateSeries();
             return (List<Serie>)JsonConvert.DeserializeObject<List<Serie>>(data);
         }
 

@@ -26,6 +26,9 @@
             Movies = FileHandler.LoadMovies("AllMovies");
             Series = FileHandler.LoadSeries("AllSeries");
 
+            if (Series == null) Series = new List<Serie>();
+            if (Movies == null) Movies = new List<Movie>();
+
             var choice = MenuHelper.ShowCreateMenu();
             if (choice == 1) InputHandler.AskForSerieData(Series);
             if (choice == 2) InputHandler.AskForMovieData(Movies);

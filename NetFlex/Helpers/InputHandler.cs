@@ -14,6 +14,7 @@
         /// <param name="movies">The movies<see cref="List{Movie}"/>.</param>
         public static void AskForMovieData(List<Movie> movies)
         {
+            if (movies == null) movies = new List<Movie>();
             var OneMore = true;
             do
             {
@@ -48,6 +49,7 @@
         /// <param name="series">The series<see cref="List{Serie}"/>.</param>
         internal static void AskForSerieData(List<Serie> series)
         {
+            if (series == null) series = new List<Serie>();
             var OneMore = true;
             do
             {
